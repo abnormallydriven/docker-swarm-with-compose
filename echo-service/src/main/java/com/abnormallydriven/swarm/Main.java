@@ -11,7 +11,7 @@ public class Main {
         final String randomUUID = UUID.randomUUID().toString();
 
         post("/echo", (req, res) -> {
-            res.header("Instance UUID", randomUUID);
+            res.header("Instance-UUID", randomUUID);
             return req.body();
         });
     }
