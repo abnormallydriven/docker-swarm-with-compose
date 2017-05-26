@@ -1,0 +1,20 @@
+version: '3.0'
+
+services:
+        ping-service:
+                image: us.gcr.io/$GCLOUD_DOCKER_REGISTRY/abnormallydriven/pingservice:latest
+                ports:
+                        - "0.0.0.0:4567:4567"
+                networks:
+                        - swarm-services
+
+        echo-service:
+                image: us.gcr.io/$GCLOUD_DOCKER_REGISTRY/abnormallydriven/echoservice:latest
+                ports:
+                        - "0.0.0.0:4568:4568"
+                networks:
+                        - swarm-services
+
+networks:
+        swarm-services:
+                driver: overlay
