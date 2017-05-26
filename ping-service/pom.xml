@@ -40,7 +40,6 @@
                             <mainClass>com.abnormallydriven.swarm.Main</mainClass>
                         </manifest>
                     </archive>
-                    <finalName>echoservice</finalName>
                     <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
                 <executions>
