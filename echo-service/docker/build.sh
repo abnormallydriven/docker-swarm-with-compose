@@ -4,4 +4,4 @@ mvn -f ../ package
 
 cp -fr ../target/echoservice.jar echoservice.jar
 
-docker build -t abnormallydriven/swarmpost:latest .
+docker build -t abnormallydriven/echoservice:latest .
