@@ -7,6 +7,15 @@ services:
                         - "0.0.0.0:4567:4567"
                 networks:
                         - swarm-services
+                deploy:
+                        replicas: 2
+                        update_config:
+                                parallelism: 1
+                                delay: 2s
+                                monitor: 30s
+                        restart-policy:
+                                condition: on-failure
+                                max_attempts: 3
 
         echo-service:
                 image: us.gcr.io/${GCLOUD_DOCKER_REGISTRY}/abnormallydriven/echoservice:latest
@@ -14,6 +23,15 @@ services:
                         - "0.0.0.0:4568:4568"
                 networks:
                         - swarm-services
+                deploy:
+                        replicas: 3
+                        update_config:
+                                parallelism: 1
+                                delay: 2s
+                                monitor: 30s
+                        restart-policy:
+                                condition: on-failure
+                                max_attempts: 3
 
 networks:
         swarm-services:
